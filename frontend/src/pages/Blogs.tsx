@@ -2,7 +2,7 @@ import { BlogCard } from "../components/BlogCard";
 import { Appbar } from "../components/Appbar";
 import { useBlogs } from "../hooks";
 import { BlogSkelton } from "../components/BlogSkelton";
-import App from "../App";
+
 export const Blogs = () => {
   const { loading, blogs } = useBlogs();
   console.log("blogstsx", blogs);
