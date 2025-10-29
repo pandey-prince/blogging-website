@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 
 import { BACKEND_URL } from "../config";
 import axios from "axios";
-
+export const isLoggedIn = () => {
+  return !!localStorage.getItem("token"); // true if token exists
+};
 export interface Blog {
   content: string;
   title: string;
