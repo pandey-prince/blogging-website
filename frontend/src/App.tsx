@@ -5,7 +5,8 @@ import { Signup } from "./pages/Signup";
 import { Blog } from "./pages/Blog";
 import { Blogs } from "./pages/Blogs";
 import { Publish } from "./pages/Publish";
-import {Home} from "./pages/Home"
+import { Home } from "./pages/Home";
+import ProtectedRoute from "./components/ProtectedRoute";
 function App() {
   return (
     <>
@@ -14,9 +15,31 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/signin" element={<Signin />} />
-          <Route path="/blog/:id" element={<Blog />} />
-          <Route path="/blogs" element={<Blogs />} />
-          <Route path="/publish" element={<Publish />} />
+
+          <Route
+            path="/blog/:id"
+            element={
+              <ProtectedRoute>
+                <Blog />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/blogs"
+            element={
+              <ProtectedRoute>
+                <Blogs />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/publish"
+            element={
+              <ProtectedRoute>
+                <Publish />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </>
