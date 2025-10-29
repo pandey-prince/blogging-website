@@ -54,9 +54,9 @@ export const Appbar = () => {
                 Logout
               </button>{" "}
             </Link>
+            <Avatar authorName="prince" />
           </>
         )}
-        <Avatar authorName="prince" />
       </div>
     </div>
   );
